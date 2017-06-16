@@ -10,3 +10,11 @@ Todo::Todo(string name, string date, string description)
 string Todo::getName() {
     return name;
 }
+
+string Todo::getDate() {
+    return date;
+}
+
+string Todo::getDescription() {
+    return description;
+}

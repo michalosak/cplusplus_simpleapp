@@ -13,9 +13,18 @@ void TodoList::addToList(Todo todo) {
 
 void TodoList::printList() {
 
+    int i=0;
     for (Todo item : listOfTodos ){
-        cout << item.getName() << endl;
+        i++;
+        cout << "(" << i << ") \n" << "NAME: " + item.getName() + "\nDATE: " + item.getDate() << endl;
+        cout << "DESCRIPTION: " << endl;
+        cout << item.getDescription() << "\n\n";
     }
 }
+
+void TodoList::removeFromList(int Id) {
+
+    listOfTodos.erase(listOfTodos.begin()+Id);
+};
 
 

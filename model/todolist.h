@@ -17,7 +17,7 @@ class TodoList {
 public:
     TodoList();
     void addToList(Todo todo);
-    void removeFromList();
+    void removeFromList(int Id);
     Todo* getList();
     void printList();
 
