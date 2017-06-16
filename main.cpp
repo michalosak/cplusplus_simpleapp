@@ -94,25 +94,32 @@ int main()
 
     string option;
 
+    TodoList todoList;
     do
     {
-        cout<<"\t\t\t\n\n\t\t\t or Enter E to EXIT\n\n\t\t\t  Enter Option: ->  ";
+        cout<<"\t\t\t\n\n\t\t\t or Enter E to EXIT\n\n\t\t\t  Enter Option: ->  \t\t\t\n1. Add\t\t\t\n2. Print list\t\t\t\ne. Exit\n";
         cin>>option;
         switch(option.at(0)) {
             case '1': // Add new
-                Todo todo("todo test", "data", "description");
-                Todo todo2("todo test2", "data", "description");
-                Todo todo3("todo test3", "data", "description");
+                {
+                    cout << "Type name: ";
+                    string name;
+                    cin >> name;
 
-                TodoList todoList;
+                    cout << "Type date: ";
+                    string date;
+                    cin >> date;
 
-                todoList.addToList(todo);
-                todoList.addToList(todo2);
-                todoList.addToList(todo3);
+                    cout << "Type description: ";
+                    string description;
+                    cin >> description;
 
-                todoList.printList();
+                    Todo todo(name, date, description);
+
+                    todoList.addToList(todo);
+                }
                 break;
-            case '2': //remove
+            case '2': //print list
                 todoList.printList();
 
                 break;
