@@ -1,5 +1,5 @@
+#include <python3.5/Python.h>
 #include <iostream>
-#include <stdlib.h>
 #include "model/todolist.h"
 
 using namespace std;
@@ -11,7 +11,7 @@ int main()
     TodoList todoList;
     do
     {   system("clear");
-        cout<<"\n--------------\nMenu\n--------------\n1. Add\n2. Remove from list\n3. Print list\ne. Exit\n--------------\n";
+        cout<<"\n--------------\nMenu\n--------------\n1. Add\n2. Remove from list\n3. Print list\n4. Python example\ne. Exit\n--------------\n";
         cin>>option;
         switch(option.at(0)) {
             case '1': // Add new
@@ -55,7 +55,13 @@ int main()
                 system("read");
                 break;
 
-
+            case '4': // python example
+                Py_Initialize();
+                PyRun_SimpleString(
+                        "from time import gmtime, strftime\n"
+                                "print('Today is',strftime(\"%a, %d %b %Y %H:%M:%S +0000\", gmtime())\n)");
+                Py_Finalize();
+                break;
         }
 
     }while(option.at(0)!='e'&&option.at(0)!='E');
